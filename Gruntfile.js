@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     jshint: {
-      all: ['Gruntfile.js', 'routes/*.js', 'public/**/*.js', 'views/**/*.js'],
+      all: ['Gruntfile.js', 'routes/*.js', 'public/**/*.js'],
       options: {
         curly: true,
         eqeqeq: true,
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     less: {
       development: {
         files: {
-          "public/css/styles.css": "less/styles.less"
+          "public/css/styles.css": "less/*.less"
         }
       }
     },

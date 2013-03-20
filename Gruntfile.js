@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     jshint: {
-      all: ['Gruntfile.js', 'routes/*.js', 'public/**/*.js'],
+      all: ['Gruntfile.js', 'routes/*.js', 'public/**/*.js', '!public/js/libs/*.js'],
       options: {
         curly: true,
         eqeqeq: true,
@@ -24,7 +24,12 @@ module.exports = function(grunt) {
       }
     },
     coffeelint: {
-      app: ['coffeescript/**/*.coffee']
+      app: ['coffeescript/**/*.coffee'],
+      options: {
+        "max_line_length": {
+          "value": 140
+        }
+      }
     },
     less: {
       development: {

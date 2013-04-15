@@ -32,11 +32,14 @@ module.exports = function(grunt) {
       }
     },
     less: {
-      development: {
-        files: {
-          "public/css/styles.css": "less/*.less"
+      glob_to_multiple: 
+        {
+          expand: true,
+          cwd: 'less',
+          src: ['**/*.less', '!mixins.less'],
+          dest: 'public/css/',
+          ext: '.css'
         }
-      }
     },
     watch: {
       src: {
